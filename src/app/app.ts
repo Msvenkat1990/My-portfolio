@@ -1,4 +1,5 @@
-import { Component, signal } from '@angular/core';
+import { afterNextRender, Component, signal } from '@angular/core';
+import AOS from 'aos';
 
 import { Footer } from './components/footer/footer';
 import { About } from './components/about/about';
@@ -30,4 +31,13 @@ import { Skills } from './components/skills/skills';
 
 export class App {
   protected readonly title = signal('portfolio-website');
+
+  constructor() {
+    afterNextRender(() => {
+      AOS.init({
+        duration: 1000,
+        once: true
+      });
+    });
+  }
 }
