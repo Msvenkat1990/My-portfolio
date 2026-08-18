@@ -8,12 +8,12 @@
   text-align: center;
 
   position: relative;
-
   overflow: hidden;
 
   padding: 100px 8% 60px;
 }
 
+/* Background glow */
 .hero::before {
   content: '';
 
@@ -30,11 +30,25 @@
 
   top: -100px;
   right: -100px;
+
+  pointer-events: none;
 }
 
+/* Hero content */
+.hero-content {
+  position: relative;
+  z-index: 1;
+
+  max-width: 1000px;
+  width: 100%;
+}
+
+/* Heading */
 .hero-content h1 {
   font-size: 82px;
+
   margin-bottom: 20px;
+
   line-height: 1.1;
 
   color: #f8fafc;
@@ -42,52 +56,90 @@
   font-weight: 700;
 }
 
-.hero-content h1 {
-  font-size: 82px;
-  margin-bottom: 20px;
-  line-height: 1.1;
-}
-
+/* Name */
 .hero-content span {
   color: #38bdf8;
 }
 
+/* Sub heading */
 .hero-content h2 {
   font-size: 36px;
+
   color: #94a3b8;
+
   margin-bottom: 30px;
 }
 
+/* Description */
 .hero-content p {
   font-size: 20px;
+
   line-height: 1.9;
+
   color: #cbd5e1;
+
+  max-width: 850px;
+
+  margin: 0 auto;
 }
 
+/* Buttons */
 .hero-buttons {
   margin-top: 45px;
 }
 
-@media(max-width:480px){
+/* Mobile */
+@media (max-width: 768px) {
 
-    .hero-content h1{
-        font-size:42px;
-        line-height:1.2;
-        word-break:break-word;
-    }
+  .hero {
+    min-height: calc(100vh - 70px);
 
-    .hero-content span{
-        display:block;
-    }
+    padding: 80px 5% 50px;
+  }
 
-    .hero-content h2{
-        font-size:22px;
-    }
+  .hero-content h1 {
+    font-size: 56px;
+  }
 
-    .hero-content p{
-        font-size:14px;
-        line-height:1.8;
-        padding:0 10px;
-    }
+  .hero-content h2 {
+    font-size: 28px;
+  }
 
+  .hero-content p {
+    font-size: 17px;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+
+  .hero {
+    padding: 70px 5% 40px;
+  }
+
+  .hero-content h1 {
+    font-size: 42px;
+    line-height: 1.2;
+
+    word-break: break-word;
+  }
+
+  .hero-content span {
+    display: block;
+  }
+
+  .hero-content h2 {
+    font-size: 22px;
+  }
+
+  .hero-content p {
+    font-size: 14px;
+    line-height: 1.8;
+
+    padding: 0 10px;
+  }
+
+  .hero-buttons {
+    margin-top: 30px;
+  }
 }
